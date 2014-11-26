@@ -6,7 +6,7 @@ NIVEL = [
     ('1','livre'),
 	('2','reservado'),
 	('3','restrito'),
-	]
+]
 	
 
 class usuario(models.Model):
@@ -21,7 +21,7 @@ class usuario(models.Model):
 class local(models.Model):
 	nome = models.CharField('Nome',max_length=100,null=True)
 	area = models.CharField('Area',max_length=100,null=True)
-	nivel = models.IntegerField('Nível de Acesso',max_length=1,choices=NIVEL,null=True)
+	nivel = models.CharField('Nível de Acesso',max_length=5,choices=NIVEL,null=True)
 	
 	def __unicode__(self):
 		return "%s - %s" % (self.nome, self.nivel)
